@@ -13,7 +13,19 @@ export default function Promotion() {
   targetDate.setDate(targetDate.getDate() + 3); // Countdown for 3 days from now
 
   // Countdown renderer callback
-  const renderer = ({ days, hours, minutes, seconds, completed }: any) => {
+  const renderer = ({
+    days,
+    hours,
+    minutes,
+    seconds,
+    completed,
+  }: {
+    days: number;
+    hours: number;
+    minutes: number;
+    seconds: number;
+    completed: boolean;
+  }) => {
     if (completed) {
       return <p className="text-lg">Promotion ended</p>;
     } else {
